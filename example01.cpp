@@ -23,9 +23,10 @@ int main(int32_t argc, char **argv) {
 	// load some resources
 	void * pic (cImageCreate(640,480,cRGB(255,0,255),32));
 	cBload(strdup("new.bmp"),pic);
+	// initiate some variables
 	int32_t x,y,wheel,buttons;
 	char fpsw[] ("Fps: 0000");
-	int32_t fps (0);
+	int32_t fps;
 	double otime (cTimer());
 	
 	// make mouse invisible
@@ -46,17 +47,17 @@ int main(int32_t argc, char **argv) {
 			fps=0;
 			otime=cTimer();
 		}
-		
 		fps+=1;
-		cScreenlock();
-		cCls();
-		cPut(0,0,0,pic,PSet);
-		cPset(0,x,y,cRGB(0,0,0));
-		cCircle(0,x,y,10,cRGB(0,0,0));
-		cDrawString(0,x-80,y-20,strdup("Press 'ESC' to quit."),cRGB(0,0,0));
 		
-		cPrint(fpsw);
+		cScreenlock();
+			cCls();
+			cPut(0,0,0,pic,PSet);
+			cPset(0,x,y,cRGB(0,0,0));
+			cCircle(0,x,y,10,cRGB(0,0,0));
+			cDrawString(0,x-80,y-20,strdup("Press 'ESC' to quit."),cRGB(0,0,0));
+			cPrint(fpsw);
 		cScreenunlock();
+		
 		cSleep(1);
 	};
 	
