@@ -1,0 +1,5 @@
+#!/bin/bash
+platform=lin64
+fbc -dylib cfbgfx.bas -x "./lib/$platform/libcfbgfx.so"
+g++ -o example01 example01.cpp -L./lib/$platform -lcfbgfx
+LD_LIBRARY_PATH=./lib/$platform:$LD_LIBRARY_PATH ./example01
