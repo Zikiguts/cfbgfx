@@ -21,8 +21,8 @@ int main(int32_t argc, char **argv) {
 	cSleep();
 		
 	// load some resources
-	void * pic (cImageCreate(640,480,cRGB(255,0,255),32));
-	cBload(strdup("new.bmp"),pic);
+	void * texture (cImageCreate(640,480,cRGB(255,0,255),32));
+	cBload(strdup("texture.bmp"),texture);
 	// initiate some variables
 	int32_t x,y,wheel,buttons;
 	char fpsw[] ("Fps: 0000");
@@ -51,7 +51,7 @@ int main(int32_t argc, char **argv) {
 		
 		cScreenlock();
 			cCls();
-			cPut(0,0,0,pic,PSet);
+			cPut(0,0,0,texture,PSet);
 			cPset(0,x,y,cRGB(0,0,0));
 			cCircle(0,x,y,10,cRGB(0,0,0));
 			cDrawString(0,x-80,y-20,strdup("Press 'ESC' to quit."),cRGB(0,0,0));
@@ -62,6 +62,6 @@ int main(int32_t argc, char **argv) {
 	};
 	
 	// Delete the resource, no memory leaks here!
-	cImageDestroy(pic);
+	cImageDestroy(texture);
 	return 0;
 }
