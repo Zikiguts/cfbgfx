@@ -1,6 +1,6 @@
 #include <string.h>
 #include <cstdio>
-#include "include/cfbgfx.h"
+#include "include/cfbgfx.hpp"
 
 
 int main(int32_t argc, char **argv) {
