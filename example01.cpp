@@ -22,7 +22,7 @@ int main(int32_t argc, char **argv) {
         
     // load some resources
     void * texture (cImageCreate(640,480,cRGB(255,0,255),32));
-    cBload(strdup("texture.bmp"),texture);
+    cBload(strdup("resources/texture.bmp"),texture);
     // initiate some variables
     int32_t x,y,wheel,buttons;
     char fpsw[] ("Fps: 0000");
