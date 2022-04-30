@@ -1,4 +1,4 @@
-' FBGFX DLL Wrapper
+' FBGFX Wrapper
 '
 extern "C"
 
